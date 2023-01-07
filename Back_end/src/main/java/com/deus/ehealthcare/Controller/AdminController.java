@@ -4,6 +4,7 @@ import com.deus.ehealthcare.entity.Product;
 import com.deus.ehealthcare.entity.StringResponse;
 import com.deus.ehealthcare.entity.User;
 import com.deus.ehealthcare.service.ProductService;
+import com.deus.ehealthcare.service.TransactionService;
 import com.deus.ehealthcare.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,9 @@ public class AdminController {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private TransactionService transactionService;
 
     @PutMapping("/api/admin/user-update")
     public ResponseEntity<?> updateUser(@RequestBody User user) {
@@ -53,6 +57,19 @@ public class AdminController {
     @PostMapping("/api/admin/product-create")
     public ResponseEntity<?> createProduct(@RequestBody Product product) {
         return new ResponseEntity<>(productService.saveProduct(product), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/api/admin/transaction-all")
+    public ResponseEntity<?> findAllTransactions(){
+        return new ResponseEntity<>(transactionService.findAllTransactions(), HttpStatus.OK);
+    }
+
+    @GetMapping("api/admin/transaction-number")
+    public ResponseEntity<?> numberOfTransactions(){
+        Long number = transactionService.numberOfTransactions();
+        StringResponse response = new StringResponse();
+        response.setResponse(number.toString());
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
    }
