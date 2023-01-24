@@ -10,8 +10,8 @@ import { State } from '../common/state';
 })
 export class NsheijaFormService {
 
-  private countriesUrl = 'http://localhost:8585/api/countries';
-  private statesUrl = 'http://localhost:8585/api/states';
+  private countriesUrl = 'http://localhost:8080/api/countries';
+  private statesUrl = 'http://localhost:8080/api/states';
 
   constructor(private httpClient: HttpClient) { }
 

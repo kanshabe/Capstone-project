@@ -30,6 +30,20 @@ import { TransactionListComponent } from './components/admin/transaction-list/tr
 import { ItemListComponent } from './components/admin/item-list/item-list.component';
 import { UserTemplateComponent } from './components/template/user-template/user-template.component';
 import { AdminTemplateComponent } from './components/template/admin-template/admin-template.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -80,6 +94,7 @@ const routes: Routes = [
   {path: 'cart-details', component: CartDetailsComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'products/:id', component: ProductDetailsComponent },
   {path: 'search/:keyword', component: ProductListComponent},
   {path: 'category/:id', component: ProductListComponent},
   {path: 'category', component: ProductListComponent},
@@ -122,7 +137,21 @@ const routes: Routes = [
     NgbModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSlideToggleModule,
+    MatListModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatInputModule,
+    MatTableModule,
+    MatProgressBarModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatSelectModule,
   
   
   ],

@@ -8,6 +8,7 @@ export default class User {
     password?: string;
     token?: string;
     role?: Role;
+    id?:number;
 
 }
 

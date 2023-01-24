@@ -3,13 +3,19 @@ package com.deus.ehealthcare.entity;
 
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 
 @Entity
-@Table(name="country")
-@Data
+@Table(name="state")
+@Getter
+@Setter
+@NoArgsConstructor
+
 public class State {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -59,6 +59,25 @@ public class AdminController {
         return new ResponseEntity<>(productService.saveProduct(product), HttpStatus.CREATED);
     }
 
+    @GetMapping("/api/admin/product-all")
+    public ResponseEntity<?> findAllProducts(){
+        return new ResponseEntity<>(productService.findAllProducts(), HttpStatus.OK);
+    }
+    @PostMapping("/api/admin/product-delete")
+    public ResponseEntity<?> deleteProduct(@RequestBody Product product){
+        productService.deleteProduct(product.getId());
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    @GetMapping("/api/admin/product-number")
+    public ResponseEntity<?> numberOfProducts(){
+        Long number = productService.numberOfProducts();
+        StringResponse response = new StringResponse();
+        response.setResponse(number.toString());
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+
+
     @GetMapping("/api/admin/transaction-all")
     public ResponseEntity<?> findAllTransactions(){
         return new ResponseEntity<>(transactionService.findAllTransactions(), HttpStatus.OK);
